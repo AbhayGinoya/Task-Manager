@@ -1,4 +1,5 @@
 import 'package:drift/drift.dart';
+import 'package:firebase_auth_mocks/firebase_auth_mocks.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_test/flutter_test.dart';
@@ -36,8 +37,6 @@ void main() {
     mockTaskDoc = MockDocumentReference<Map<String, dynamic>>();
     mockFirebaseAuth = MockFirebaseAuth();
 
-
-    when(mockFirebaseAuth.currentUser).thenReturn(MockUser());
 
     syncRepository = SyncRepository(mockLocalDb);
     when(mockFirestore.collection(Const.taskCollection)).thenReturn(mockTaskCollection);

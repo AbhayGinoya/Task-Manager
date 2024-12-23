@@ -11,6 +11,8 @@ import 'package:flutter_test/flutter_test.dart';
 @GenerateMocks([
   Firebase,
   FirebaseAuth,
+  UserCredential,
+  User,
   FirebaseFirestore,
   CollectionReference<Map<String, dynamic>>,
   DocumentReference<Map<String, dynamic>>,

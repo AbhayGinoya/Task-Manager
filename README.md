@@ -27,10 +27,11 @@
 
 ## **Dev Dependencies**
 
-* drift_dev : drift Database Support
-* build_runner : generate default code
-* sqlite3_flutter_libs : Local database native file setup.
-* mockito : test case.
+* Drift Dev : Drift Database Support
+* Build Runner : Generate default code (drift and mock)
+* Sqlite3 Flutter Libs : Local database native file setup.
+* Mockito : Test case.
+* Firebase Auth Mocks: Test Case
 
 ## **Font Family**
 

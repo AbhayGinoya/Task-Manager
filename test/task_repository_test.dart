@@ -20,6 +20,10 @@ void main() {
     });
 
 
+
+    /***
+     * Add Task Method Test Case
+     */
     test('addTask (insertTask) method', () async {
 
       const userId = '123';
@@ -45,6 +49,10 @@ void main() {
       )).called(1);
     });
 
+
+    /***
+     * Get All Task Method Test Case
+     */
     test('getLocalTask should return a list of tasks', () async {
 
       const status = Status.pending;
@@ -72,6 +80,9 @@ void main() {
       verify(mockLocalDb.getAllTasks(status: status)).called(1);
     });
 
+    /***
+     * Update Task Method Test Case
+     */
 
     test('updateTask  method', () async {
       const id = 1;
@@ -96,6 +107,10 @@ void main() {
       )).called(1);
     });
 
+
+    /***
+     * Delete Task Method Test Case
+     */
     test('deleteTask method', () async {
       const id = 1;
       when(mockLocalDb.deleteTask(id: id)).thenAnswer((_) async => 1);  // Return 1 for 1 row deleted
@@ -105,6 +120,9 @@ void main() {
       verify(mockLocalDb.deleteTask(id: id)).called(1);
     });
 
+    /***
+     * Update Task Status Method Test Case
+     */
     test('updateTaskStatus method', () async {
       const id = 1;
       const status = Status.completed;
