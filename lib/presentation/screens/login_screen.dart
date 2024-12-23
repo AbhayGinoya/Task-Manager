@@ -158,6 +158,13 @@ class _LoginScreenState extends State<LoginScreen> {
                             onPressed: () async {
                               FocusScope.of(context).unfocus();
                               _isLoading.value = true;
+                              if(_rememberMe.value) {
+                                AuthPreference authPreference = AuthPreference();
+                                await authPreference.saveUserEmail(_emailController.text);
+                                await authPreference.saveUserPassword(_passwordController.text);
+                                await authPreference.saveIsRememberMe(_rememberMe.value);
+                              }
+
                               final auth = ref.read(authProvider.notifier);
                               final Pair<bool, String> response = await auth.login(
                                 email: _emailController.text,

@@ -53,6 +53,7 @@
 ## [Folder Structure]
 
     lib/
+        ├── core/
         ├── data/
         │       ├── models/
         │       ├── repositories/
@@ -67,17 +68,15 @@
         ├── providers/
         ├── main.dart
 
-    1. Data Layer
-        Contains the models, repositories, and logic to interact with both local and remote data sources (Firestore, Drift).
-
-    2. Domain Layer
-        Conatins use cases, and entities. This layer is independent of external libraries and frameworks.
-
-    3. Presentation Layer
-        Contains UI-related code, including screens, view models, and widgets.
+    1. Core Layer : Contains theme, enum, extension routes, size,color,valaidation and constant  
     
-    4. Proivder
-        Contains business logic
+    2. Data Layer : Contains the models, repositories, and logic to interact with both local and remote data sources (Firestore, Drift).
+
+    3. Domain Layer : Conatins use cases, and entities. This layer is independent of external libraries and frameworks.
+
+    4. Presentation Layer : Contains UI-related code, including screens, view models, and widgets.
+    
+    5. Proivder : Contains business logic
 
 ## [App Description]
 

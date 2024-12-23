@@ -2,6 +2,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:task_manager/core/utils/constant.dart';
 import 'package:task_manager/data/models/result.dart';
+import 'package:task_manager/domain/preference/auth_preference.dart';
 
 class AuthRepository {
   final FirebaseAuth _auth = FirebaseAuth.instance;
@@ -74,6 +75,9 @@ class AuthRepository {
 
         /// Update the email
         await user.verifyBeforeUpdateEmail(email,ActionCodeSettings(url: "https://task-manger-7610f.firebaseapp.com/__/auth/action?mode=action&oobCode=code"));
+        AuthPreference authPreference = AuthPreference();
+        await authPreference.saveUserEmail(email);
+        await authPreference.saveUserPassword(password);
         return const Success(data: "New email updated successfully");
       }
 
