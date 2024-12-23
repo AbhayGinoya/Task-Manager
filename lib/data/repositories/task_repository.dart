@@ -1,4 +1,3 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:drift/drift.dart';
 import 'package:task_manager/core/utils/enum.dart';
 import 'package:task_manager/core/utils/extension.dart';
