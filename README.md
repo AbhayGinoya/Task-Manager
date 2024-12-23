@@ -10,7 +10,7 @@
 
 ## [Technologies & Packages Used]
 
-    [Dependencies]
+## **Dependencies**
 
 * Firebase Core: Config firebase setup.
 * Firebase Auth: Firebase authentication for login and registration.
@@ -25,12 +25,17 @@
 * MVVM & Clean Architecture: Architectural pattern for maintainability and scalability.
 * Flutter: The UI framework used for the app development.
 
-[Dev Dependencies]
+## **Dev Dependencies**
 
 * drift_dev : drift Database Support
 * build_runner : generate default code
 * sqlite3_flutter_libs : Local database native file setup.
 * mockito : test case.
+
+## **Font Family **
+
+* JetBrainsMono 
+* Pacifico - Regular
 
 ## [Setup Instructions]
 
