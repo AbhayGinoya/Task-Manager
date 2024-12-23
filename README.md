@@ -32,7 +32,7 @@
 * sqlite3_flutter_libs : Local database native file setup.
 * mockito : test case.
 
-## **Font Family **
+## **Font Family**
 
 * JetBrainsMono 
 * Pacifico - Regular
