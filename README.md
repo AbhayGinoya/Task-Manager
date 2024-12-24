@@ -28,8 +28,6 @@
 * workmanager : Sync data firebase to local and local to server.
 * Riverpod: State management library for managing app state.
 * go_router: A declarative routing package for Flutter.
-* MVVM & Clean Architecture: Architectural pattern for maintainability and scalability.
-* Flutter: The UI framework used for the app development.
 
 ## **Dev Dependencies**
 
