@@ -163,7 +163,7 @@ class _HomeScreenState extends State<HomeScreen> {
             itemBuilder: (context, index) {
               final task = tasks[index];
               return Dismissible(
-                key: ValueKey(task.id),
+                key: UniqueKey(),
                 direction: DismissDirection.horizontal,
                 onDismissed: (direction) {
                   if (direction == DismissDirection.startToEnd) {
@@ -281,7 +281,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                 )),
                             gapW4,
                             Text(
-                              task.date.formatDate(DateFormats.YYYY_MM_DD_HH_MM_SS, DateFormats.MMM_DD_HH_MM_AA),
+                              task.date.formatDate(DateFormats.MMM_DD_HH_MM_AA),
                               style: Theme.of(context)
                                   .textTheme
                                   .bodySmall

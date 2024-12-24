@@ -16,7 +16,7 @@ class LocalDatabase extends _$LocalDatabase {
 
   Future<List<TaskData>> getAllTasks({required Status status}) {
     if (status == Status.all) {
-      return (select(task)..orderBy([(t) => OrderingTerm(expression: t.date)])).get();
+      return (select(task)..orderBy([(t) => OrderingTerm(expression: t.date,mode: OrderingMode.desc)])).get();
     } else {
       return (select(task)
             ..where((tbl) => tbl.status.equals(status.toString()))
@@ -45,10 +45,13 @@ class LocalDatabase extends _$LocalDatabase {
 
       if (existingTask != null) {
         /// If the task exists, update it
-        await update(task).replace(element);
-      } else {
+        await (update(task)
+          ..where((tbl) => tbl.serverId.equals(element.serverId.value!)))
+        .write(element);
+
+    } else {
         /// If the task doesn't exist, insert a new one
-        await into(task).insert(element);
+        await into(task).insert(element,mode: InsertMode.insertOrReplace);
       }
     }
   }

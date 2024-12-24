@@ -2,6 +2,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:drift/drift.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:task_manager/core/utils/constant.dart';
+import 'package:task_manager/core/utils/extension.dart';
 import 'package:task_manager/domain/database/local_database.dart';
 
 class SyncRepository {
@@ -36,16 +37,21 @@ class SyncRepository {
     List<DocumentSnapshot> snapshotData = [];
     snapshotData.addAll(serverTaskData.docs);
 
-    List<TaskCompanion> tasks = snapshotData.map((e) {
-      return TaskCompanion(
-        serverId: e['serverId'],
-        title: e['title'],
-        description: e['description'],
-        status: e['status'],
-        date: e['date'],
-      );
-    }).toList();
-    await _localDb.bulkInsert(tasks: tasks);
+    try {
+      List<TaskCompanion> tasks = snapshotData.map((e) {
+        return TaskCompanion(
+          serverId: Value(e['serverId'] as String),
+          userId: Value(e['serverId'] as String),
+          title: Value(e['title'] as String),
+          description: Value(e['description'] as String),
+          status: Value(e['status'] as String),
+          date: Value((e['date'] as int).convertMillSecondToDate),
+        );
+      }).toList();
+      await _localDb.bulkInsert(tasks: tasks);
+    } catch(e) {
+      print("Error : $e");
+    }
   }
 
   /// Sync Update Task

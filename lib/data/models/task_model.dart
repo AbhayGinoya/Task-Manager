@@ -6,7 +6,7 @@ class Task extends Table {
   TextColumn get title => text()();
   TextColumn get status => text()();
   TextColumn get description => text()();
-  TextColumn get date => text()();
+  DateTimeColumn get date => dateTime()();
 }
 
 

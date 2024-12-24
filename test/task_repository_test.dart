@@ -29,7 +29,7 @@ void main() {
       const userId = '123';
       const title = 'Test Task';
       const description = 'Description';
-      const date = '2024-12-23';
+      DateTime date =  DateTime.now().formatDate(DateFormats.YYYY_MM_DD_HH_MM_SS).convertStringToDate(DateFormats.YYYY_MM_DD_HH_MM_SS);
 
       when(mockLocalDb.insertTask(
         tasks: anyNamed('tasks'),  // Use anyNamed to match the 'tasks' argument
@@ -43,7 +43,7 @@ void main() {
           userId: const Value(userId),
           title: const Value(title),
           description: const Value(description),
-          date: const Value(date),
+          date:  Value(date),
           status: Value(Status.pending.toString()),
         ),
       )).called(1);
@@ -61,7 +61,7 @@ void main() {
             id: 1,
             title: 'Test Task',
             status: status.toString(),
-            date: '2024-12-23',
+            date: DateTime.now().formatDate(DateFormats.YYYY_MM_DD_HH_MM_SS).convertStringToDate(DateFormats.YYYY_MM_DD_HH_MM_SS),
             userId: '1',
             description: 'Test Description')
       ];
@@ -102,7 +102,7 @@ void main() {
         tasks: TaskCompanion(
           title: const Value(title),
           description: const Value(description),
-          date: Value(DateTime.now().formatDate(DateFormats.YYYY_MM_DD_HH_MM_SS)),
+          date: Value( DateTime.now().formatDate(DateFormats.YYYY_MM_DD_HH_MM_SS).convertStringToDate(DateFormats.YYYY_MM_DD_HH_MM_SS),),
         ),
       )).called(1);
     });

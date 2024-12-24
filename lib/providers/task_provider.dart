@@ -74,7 +74,7 @@ class TaskProvider extends StateNotifier<List<TaskEntity>> {
         userId: FirebaseAuth.instance.currentUser?.uid ?? "",
         title: title,
         description: description,
-        date: DateTime.now().formatDate(DateFormats.YYYY_MM_DD_HH_MM_SS));
+        date: DateTime.now().formatDate(DateFormats.YYYY_MM_DD_HH_MM_SS).convertStringToDate(DateFormats.YYYY_MM_DD_HH_MM_SS));
     await loadAllTask(status: _status);
     SyncManager.syncLocalToServer();
   }

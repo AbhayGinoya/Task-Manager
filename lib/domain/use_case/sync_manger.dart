@@ -42,6 +42,7 @@ abstract final class SyncManager {
   static Future<void> syncServerToLocal() async {
     Workmanager().registerOneOffTask(getDataTag, getDataTag,
         tag: getDataTag,
+        backoffPolicy: BackoffPolicy.exponential,
         initialDelay: const Duration(seconds: 10),
         constraints: Constraints(
           networkType: NetworkType.connected,

@@ -16,7 +16,7 @@ class TaskRepository {
     required String userId,
     required String title,
     required String description,
-    required String date,
+    required DateTime date,
   }) async {
     await _localDb.insertTask(
         tasks: TaskCompanion(
@@ -39,7 +39,7 @@ class TaskRepository {
         tasks: TaskCompanion(
           title: Value(title),
           description: Value(description),
-          date: Value(DateTime.now().formatDate(DateFormats.YYYY_MM_DD_HH_MM_SS)),
+          date: Value(DateTime.now().formatDate(DateFormats.YYYY_MM_DD_HH_MM_SS).convertStringToDate(DateFormats.YYYY_MM_DD_HH_MM_SS)),
         ));
   }
 

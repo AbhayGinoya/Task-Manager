@@ -47,14 +47,34 @@
 * Firebase Project set up with Firebase Authentication and Firestore.
 * Android Studio for development.
 
+
 ## [Configure Firebase]
 
      1. Create a Firebase project if you haven’t already.
+
      2. Add the Firebase configuration files to your project:
+
      3. For Android, place the google-services.json in the android/app directory.
+
      4. For iOS, place the GoogleService-Info.plist in the ios/Runner directory.
+
      5. Enable Firebase Authentication and Firestore in the Firebase console.
+
      6. Set up Firebase for your Flutter project by following the Firebase setup documentation for Flutter.
+
+
+## [Configure Drift Local Database]
+
+     1. Setup: Add drift, and path_provider as dependencies in the pubspec.yaml file. Use drift_dev and build_runner for code generation.
+
+     2. Define Tables: Create Dart classes for database tables by extending Table. Specify the columns and their properties, such as data types, constraints, and default values.
+
+     3. Generate Code: Run dart run build_runner build to generate code for managing tables and queries.
+
+     4. Database Initialization: Use a LazyDatabase to create and manage the database file, ensuring it integrates seamlessly with Flutter’s file system.
+
+     5. CRUD Operations: Implement Create, Read, Update, and Delete (CRUD) operations in the database class by extending GeneratedDatabase. Drift provides APIs for both simple and complex queries.
+
 
 ## [Folder Structure]
 
@@ -86,19 +106,43 @@
 
 ## [App Description]
 
-    1. This Flutter app enables users to manage their tasks with Firebase authentication and offline synchronization. The key features of the app are as follows:
+* This Flutter app is designed to provide seamless task management with Firebase integration and robust offline synchronization. Here’s an overview of its features:
 
-    2. Authentication: Users can register using their email and password, log in with the same credentials, and reset their password via email. They can also update their email within the app.
+## Key Features:
 
-    3. Task Management: Once logged in, users can view, create, and update tasks. A task can only be updated if its status is "pending." Users can also change the task's status.
+###   1. Authentication:
+         Users can register, log in, and reset their passwords via email. They can also update their email addresses directly within the app.
 
-    4. Syncing Data: On first access to the home screen, the app syncs data from the Firebase server to the local database, ensuring that the user's task data is available offline.
+###   2. Task Management:
+         Users can view, create, and update tasks.
+         Tasks can only be updated if their status is set to "pending."
+         Task statuses can be changed as needed.
 
-    5. Offline Support: If the device is offline, tasks can still be created, updated, and deleted. These changes are saved in the local database (Isar or Drift). Once the internet connection is restored, the app automatically syncs the local changes with Firebase using WorkManager to schedule background tasks for synchronization.
+###   3. Data Syncing:
+         On the initial access to the home screen, the app automatically syncs task data from Firebase to the local Drift database, ensuring all tasks are accessible offline.
+         
+###   4. Offline Support:
+         Users can create, update, and delete tasks even without an internet connection.
+         Offline changes are stored in the local database and synchronized with Firebase once the internet connection is restored.
 
-    6. Task Synchronization: Whenever the user adds or updates a task, it is immediately synced with Firebase when the internet is available. If there’s no internet connection, the task is scheduled for later synchronization once the internet is restored.
+###   5. Background Syncing:
+         Using WorkManager, the app schedules background tasks to sync local changes with Firebase when the device reconnects to the internet.
 
-    7. This architecture ensures a smooth user experience with robust task management, real-time syncing, and offline capabilities, allowing users to interact with their tasks seamlessly regardless of their network connection.
+###   6. Real-Time Syncing:
+         When a task is added or updated, it is instantly synced with Firebase if an internet connection is available. Otherwise, it is queued for later synchronization.
+
+###   7. Intuitive Swipe Actions:
+        Swipe Left to Right: Marks the task as completed.
+        Swipe Right to Left: Permanently deletes the task.
+
+## Summary:
+    The app offers a powerful and user-friendly experience by combining Firebase authentication, real-time and offline task management, and background synchronization. With intuitive swipe gestures for task updates and deletions, it ensures users can efficiently manage their tasks, whether online or offline.
+
+
+
+
+
+
 
 
 

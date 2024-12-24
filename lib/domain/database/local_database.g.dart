@@ -46,9 +46,9 @@ class $TaskTable extends Task with TableInfo<$TaskTable, TaskData> {
       type: DriftSqlType.string, requiredDuringInsert: true);
   static const VerificationMeta _dateMeta = const VerificationMeta('date');
   @override
-  late final GeneratedColumn<String> date = GeneratedColumn<String>(
+  late final GeneratedColumn<DateTime> date = GeneratedColumn<DateTime>(
       'date', aliasedName, false,
-      type: DriftSqlType.string, requiredDuringInsert: true);
+      type: DriftSqlType.dateTime, requiredDuringInsert: true);
   @override
   List<GeneratedColumn> get $columns =>
       [id, serverId, userId, title, status, description, date];
@@ -123,7 +123,7 @@ class $TaskTable extends Task with TableInfo<$TaskTable, TaskData> {
       description: attachedDatabase.typeMapping
           .read(DriftSqlType.string, data['${effectivePrefix}description'])!,
       date: attachedDatabase.typeMapping
-          .read(DriftSqlType.string, data['${effectivePrefix}date'])!,
+          .read(DriftSqlType.dateTime, data['${effectivePrefix}date'])!,
     );
   }
 
@@ -140,7 +140,7 @@ class TaskData extends DataClass implements Insertable<TaskData> {
   final String title;
   final String status;
   final String description;
-  final String date;
+  final DateTime date;
   const TaskData(
       {required this.id,
       this.serverId,
@@ -160,7 +160,7 @@ class TaskData extends DataClass implements Insertable<TaskData> {
     map['title'] = Variable<String>(title);
     map['status'] = Variable<String>(status);
     map['description'] = Variable<String>(description);
-    map['date'] = Variable<String>(date);
+    map['date'] = Variable<DateTime>(date);
     return map;
   }
 
@@ -188,7 +188,7 @@ class TaskData extends DataClass implements Insertable<TaskData> {
       title: serializer.fromJson<String>(json['title']),
       status: serializer.fromJson<String>(json['status']),
       description: serializer.fromJson<String>(json['description']),
-      date: serializer.fromJson<String>(json['date']),
+      date: serializer.fromJson<DateTime>(json['date']),
     );
   }
   @override
@@ -201,7 +201,7 @@ class TaskData extends DataClass implements Insertable<TaskData> {
       'title': serializer.toJson<String>(title),
       'status': serializer.toJson<String>(status),
       'description': serializer.toJson<String>(description),
-      'date': serializer.toJson<String>(date),
+      'date': serializer.toJson<DateTime>(date),
     };
   }
 
@@ -212,7 +212,7 @@ class TaskData extends DataClass implements Insertable<TaskData> {
           String? title,
           String? status,
           String? description,
-          String? date}) =>
+          DateTime? date}) =>
       TaskData(
         id: id ?? this.id,
         serverId: serverId.present ? serverId.value : this.serverId,
@@ -259,7 +259,7 @@ class TaskCompanion extends UpdateCompanion<TaskData> {
   final Value<String> title;
   final Value<String> status;
   final Value<String> description;
-  final Value<String> date;
+  final Value<DateTime> date;
   const TaskCompanion({
     this.id = const Value.absent(),
     this.serverId = const Value.absent(),
@@ -276,7 +276,7 @@ class TaskCompanion extends UpdateCompanion<TaskData> {
     required String title,
     required String status,
     required String description,
-    required String date,
+    required DateTime date,
   })  : userId = Value(userId),
         title = Value(title),
         status = Value(status),
@@ -289,7 +289,7 @@ class TaskCompanion extends UpdateCompanion<TaskData> {
     Expression<String>? title,
     Expression<String>? status,
     Expression<String>? description,
-    Expression<String>? date,
+    Expression<DateTime>? date,
   }) {
     return RawValuesInsertable({
       if (id != null) 'id': id,
@@ -309,7 +309,7 @@ class TaskCompanion extends UpdateCompanion<TaskData> {
       Value<String>? title,
       Value<String>? status,
       Value<String>? description,
-      Value<String>? date}) {
+      Value<DateTime>? date}) {
     return TaskCompanion(
       id: id ?? this.id,
       serverId: serverId ?? this.serverId,
@@ -343,7 +343,7 @@ class TaskCompanion extends UpdateCompanion<TaskData> {
       map['description'] = Variable<String>(description.value);
     }
     if (date.present) {
-      map['date'] = Variable<String>(date.value);
+      map['date'] = Variable<DateTime>(date.value);
     }
     return map;
   }

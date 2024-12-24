@@ -6,7 +6,7 @@ class TaskEntity {
   final String title;
   final String description;
   final String status;
-  final String date;
+  final DateTime date;
 
   TaskEntity({required this.id, this.serverId, required this.userId,required this.title, required this.description, required this.status, required this.date});
 }
