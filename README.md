@@ -140,13 +140,9 @@
 
 
 ## Screenshots
-![login screen](https://github.com/user-attachments/assets/b5c60aa8-2179-40bd-b722-ea541402957f)
+![login screen](https://github.com/user-attachments/assets/b5c60aa8-2179-40bd-b722-ea541402957f)   ![signup screen](https://github.com/user-attachments/assets/7dbfc13b-ac10-43b2-a70c-331bfdc74d08)
 
-![signup screen](https://github.com/user-attachments/assets/7dbfc13b-ac10-43b2-a70c-331bfdc74d08)
-
-![home_screen](https://github.com/user-attachments/assets/e6b275e9-8c9b-4bca-b1bd-e4c036ca915f)
-
-![create task](https://github.com/user-attachments/assets/b3c8319b-3258-47ff-9861-e66fcb8b156b)
+![home_screen](https://github.com/user-attachments/assets/e6b275e9-8c9b-4bca-b1bd-e4c036ca915f)    ![create task](https://github.com/user-attachments/assets/b3c8319b-3258-47ff-9861-e66fcb8b156b)
 
 ## Demo Video
 https://github.com/user-attachments/assets/4ac4c779-763e-454e-94aa-411f09d91d83
