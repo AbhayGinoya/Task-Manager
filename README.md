@@ -1,3 +1,9 @@
+
+
+
+![Flutter](https://github.com/user-attachments/assets/f5c9d4c1-3cac-4303-a5b2-37d0a6afcfcc)
+
+
 ## [Features]
 
 * Authentication & Authorization: Firebase Authentication for user registration, login, forgot passsword and logout.
@@ -140,9 +146,9 @@
 
 
 ## Screenshots
-![login screen](https://github.com/user-attachments/assets/b5c60aa8-2179-40bd-b722-ea541402957f)   ![signup screen](https://github.com/user-attachments/assets/7dbfc13b-ac10-43b2-a70c-331bfdc74d08)
+![login screen](https://github.com/user-attachments/assets/3821e734-8989-443c-9eab-30d6a72de171)            ![signup screen](https://github.com/user-attachments/assets/94d0ecc3-d1cb-484c-8db4-88d422229566) 
 
-![home_screen](https://github.com/user-attachments/assets/e6b275e9-8c9b-4bca-b1bd-e4c036ca915f)    ![create task](https://github.com/user-attachments/assets/b3c8319b-3258-47ff-9861-e66fcb8b156b)
+![home_screen](https://github.com/user-attachments/assets/e03c121e-2cf8-4b23-9d20-985cf74b4611)             ![create task](https://github.com/user-attachments/assets/f2bfb56d-608b-42a8-b2e7-0d419752fbe7)
 
 ## Demo Video
 https://github.com/user-attachments/assets/4ac4c779-763e-454e-94aa-411f09d91d83
